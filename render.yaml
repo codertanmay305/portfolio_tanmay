@@ -1,9 +1,9 @@
 services:
   - type: web
     name: portfolio
-    runtime: static
-    buildCommand: npm install && npm run build
-    publishPath: dist
+    runtime: node
+    buildCommand: npm install --legacy-peer-deps && npm run build
+    startCommand: npx serve dist
     envVars:
       - key: NODE_VERSION
         value: "20"
